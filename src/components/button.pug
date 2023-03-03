@@ -1,0 +1,9 @@
+mixin button(text, type, link)
+  if type === "primary"
+    button.button.attach-icon.button--primary=text
+  else if type === "ghost"
+    button.button.button--ghost
+      a(href=link)=text
+  else
+    button.button=text
+    

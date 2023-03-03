@@ -1,0 +1,34 @@
+extends ../../templates/main
+include ../../components/avatar
+include ../../components/button
+include ../../components/input
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Мессенджер
+
+block main 
+  .messager-container
+    .sidebar-container
+      .sidebar-container__header
+        .user-bar
+          .user-bar__info
+            + avatar()
+            .user-bar__name
+              p Петя Пупкин
+              span my@email.com
+          button.button.button--ghost.icon.icon--user
+      .sidebar-container__body
+        form.search-form
+          + input('search_value', 'text', 'Поиск')
+      .sidebar-container__add-chat
+        button.button.button--primary.icon.icon--add
+    .message-feed-container
+      .message-feed-container__body
+        .message-feed-container__empty Выберите чат, чтобы отправить сообщение
+      .message-feed-container__footer
+        form.message-form
+          button.button.button--ghost.icon.icon--attach
+          + input('message', 'text', 'Новое сообщение')
+          button.button.button--primary.icon.icon--send

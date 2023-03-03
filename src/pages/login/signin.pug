@@ -1,0 +1,21 @@
+extends ../../templates/main
+include ../../components/input
+include ../../components/button
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Войти
+
+block main 
+  .wrapper__centered
+    .login-container
+      .login-container__header
+        h1 Авторизация
+      .login-container__body
+        form.login-form
+          .login-form__body
+            + input('login', 'text', 'Логин')
+            + input('password', 'password', 'Пароль')
+          + button('Войти', 'primary')
+        + button('Нет аккаунта?', 'ghost', './signup.pug')

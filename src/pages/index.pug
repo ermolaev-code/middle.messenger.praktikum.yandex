@@ -1,0 +1,20 @@
+extends ../templates/main
+
+block head
+  title Страницы проекта
+
+block main 
+  h1 Страницы проекта
+  ul
+    li
+      a(href="./login/signin.pug") Войти
+    li
+      a(href="./login/signup.pug") Регистрация
+    li
+      a(href="./messanger/messanger.pug") Мессенджер
+    li
+      a(href="./profile/profile.pug") Профиль
+    li
+      a(href="./http-errors/404.pug") 404
+    li
+      a(href="./http-errors/500.pug") 500
