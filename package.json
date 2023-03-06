@@ -8,6 +8,9 @@
     "build": "npm run clear && parcel build ./src/pages/**/*.pug",
     "start": "npm run build && node server.js"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ermolaev-code/middle.messenger.praktikum.yandex.git"
