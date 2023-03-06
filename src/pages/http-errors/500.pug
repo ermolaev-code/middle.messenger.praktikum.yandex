@@ -1,5 +1,5 @@
 extends ../../templates/main
-include ../../components/error-message
+include ../../components/error
 include ../../components/button
 
 block head
@@ -11,6 +11,6 @@ block main
   .wrapper__centered
     .error-container
       .error-container__body 
-        + errorMessage('500', 'Мы уже фиксим')
+        + error('500', 'Мы уже фиксим')
       .error-container__footer
         + button('Назад к чатам', 'ghost', '../index.pug')

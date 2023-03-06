@@ -2,6 +2,8 @@ extends ../../templates/main
 include ../../components/avatar
 include ../../components/button
 include ../../components/input
+include ../../components/chat
+include ../../components/user
 
 block head
   link(rel="stylesheet", href="../../styles/main.scss")
@@ -12,16 +14,13 @@ block main
   .messager-container
     .sidebar-container
       .sidebar-container__header
-        .user-bar
-          .user-bar__info
-            + avatar()
-            .user-bar__name
-              p Петя Пупкин
-              span my@email.com
-          button.button.button--ghost.icon.icon--user
-      .sidebar-container__body
+        + user('Петя Пупкин', 'petkapupkin@email.com')
         form.search-form
           + input('search_value', 'text', 'Поиск')
+      .sidebar-container__body
+        ul.chat-list
+          + chat('Киноклуб', ' стикер', '12:00', 0, true)
+          + chat('Илья', 'Друзья, у меня для вас особенный выпу...', 'ПТ', 4, false)
       .sidebar-container__add-chat
         button.button.button--primary.icon.icon--add
     .message-feed-container
@@ -29,6 +28,6 @@ block main
         .message-feed-container__empty Выберите чат, чтобы отправить сообщение
       .message-feed-container__footer
         form.message-form
-          button.button.button--ghost.icon.icon--attach
+          button.button.button--default.icon.icon--attach
           + input('message', 'text', 'Новое сообщение')
           button.button.button--primary.icon.icon--send

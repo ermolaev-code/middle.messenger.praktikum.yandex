@@ -1,0 +1,16 @@
+@mixin flexcenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexcolumn($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin fullpadding($block, $inline) {
+  padding-block: $block;
+  padding-inline: $inline;
+}

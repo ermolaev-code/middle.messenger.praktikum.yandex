@@ -1,0 +1,24 @@
+extends ../../templates/main
+include ../../components/avatar
+include ../../components/input
+include ../../components/button
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Твой профиль (изменить данные)
+
+block main 
+  .wrapper__centered
+    .profile-container
+      + avatar('large')
+      h1.profile-container__title Изменить данные
+      form.profile-container__body
+        + input('email', 'text', 'Почта', 'petkapupkin@email.com')
+        + input('login', 'text', 'Логин', 'pupkintop')
+        + input('first_name', 'text', 'Имя', 'Петр')
+        + input('second_name', 'text', 'Фамилия', 'Пупкин')
+        + input('display_name', 'text', 'Имя в чате', 'Петя')
+        + input('phone', 'text', 'Телефон', '+7 (909) 967 30 30')
+        + button('Сохранить', 'primary')
+        

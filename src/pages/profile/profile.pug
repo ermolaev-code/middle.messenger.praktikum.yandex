@@ -1,8 +1,27 @@
 extends ../../templates/main
+include ../../components/avatar
+include ../../components/description
+include ../../components/button
 
 block head
+  link(rel="stylesheet", href="../../styles/main.scss")
   link(rel="stylesheet", href="./style.scss")
   title Твой профиль
 
 block main 
-  h1 Твой профиль
+  .wrapper__centered
+    .profile-container
+      + avatar('large', true)
+      h1.profile-container__title Петя Пупкин
+      .profile-container__body
+        + description('Почта', 'petkapupkin@email.com')
+        + description('Логин', 'pupkintop')
+        + description('Имя', 'Петр')
+        + description('Фамилия', 'Пупкин')
+        + description('Имя в чате', 'Петя')
+        + description('Телефон', '+7 (909) 967 30 30')
+      .profile-container__footer
+        + button('Изменить данные', 'ghost', './profile-edit-info.pug')
+        + button('Изменить пароль', 'ghost', './profile-edit-password.pug')
+        + button('Выйти', 'danger')
+        

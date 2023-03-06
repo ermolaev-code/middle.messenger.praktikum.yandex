@@ -1,14 +1,11 @@
-%flex-column {
-  display: flex;
-  flex-direction: column;
-}
+@import '../../styles/consts';
+@import '../../styles/mixins';
 
 .login-container {
-  @extend %flex-column;
-  gap: 32px;
+  @include flexcolumn(32px);
+  @include fullpadding(32px, 32px);
   width: 340px;
-  padding: 30px;
-  background-color: #221833;
+  background-color: $secondaryBg;
   border-radius: 12px;
 
   &__header {
@@ -24,13 +21,16 @@
     text-align: center;
 
     .login-form {
-      @extend %flex-column;
-      gap: 64px;
+      @include flexcolumn(64px);
       margin-bottom: 6px;
 
       &__body {
-        @extend %flex-column;
-        gap: 24px;
+        @include flexcolumn(24px);
+      }
+
+      label,
+      span {
+        background-color: $secondaryBg;
       }
     }
   }
