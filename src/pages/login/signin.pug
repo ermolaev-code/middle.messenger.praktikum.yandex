@@ -1,6 +1,7 @@
 extends ../../templates/main
 include ../../components/input
 include ../../components/button
+include ../../components/button-submit
 
 block head
   link(rel="stylesheet", href="../../styles/main.scss")
@@ -17,5 +18,5 @@ block main
           .login-form__body
             + input('login', 'text', 'Логин')
             + input('password', 'password', 'Пароль')
-          + button('Войти', 'primary')
+          + buttonSubmit('Войти')
         + button('Нет аккаунта?', 'ghost', './signup.pug')

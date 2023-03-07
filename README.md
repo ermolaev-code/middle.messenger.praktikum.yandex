@@ -18,4 +18,3 @@ npm run start // билд и запуск севера на http://localhost:300
 - CSS препроцессор SASS
 - Сервер раздачи статики Express
 - Форматироване кода Prettier
-

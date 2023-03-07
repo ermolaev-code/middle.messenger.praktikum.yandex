@@ -1,7 +1,7 @@
 extends ../../templates/main
 include ../../components/avatar
 include ../../components/input
-include ../../components/button
+include ../../components/button-submit
 
 block head
   link(rel="stylesheet", href="../../styles/main.scss")
@@ -20,5 +20,4 @@ block main
         + input('second_name', 'text', 'Фамилия', 'Пупкин')
         + input('display_name', 'text', 'Имя в чате', 'Петя')
         + input('phone', 'text', 'Телефон', '+7 (909) 967 30 30')
-        + button('Сохранить', 'primary')
-        
+        + buttonSubmit('Сохранить')

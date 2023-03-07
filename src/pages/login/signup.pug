@@ -1,6 +1,7 @@
 extends ../../templates/main
 include ../../components/input
 include ../../components/button
+include ../../components/button-submit
 
 block head
   link(rel="stylesheet", href="../../styles/main.scss")
@@ -22,5 +23,5 @@ block main
             + input('phone', 'text', 'Телефон')
             + input('password', 'password', 'Пароль')
             + input('password_r', 'password', 'Пароль (еще раз)', '123456789', 'Пароли не совпадают')
-          + button('Зарегистрироваться', 'primary')
+          + buttonSubmit('Зарегистрироваться')
         + button('Войти', 'ghost', './signin.pug')
