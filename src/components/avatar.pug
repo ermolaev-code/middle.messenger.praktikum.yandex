@@ -1,0 +1,13 @@
+mixin avatar(size, isChange)
+  if size === "large"
+    if isChange 
+      .avatar.avatar--large.avatar--changer
+        .avatar__changer Поменять аватар
+    else 
+      .avatar.avatar--large
+  else
+    if isChange 
+      .avatar.avatar--changer
+        .avatar__changer Поменять аватар
+    else 
+      .avatar

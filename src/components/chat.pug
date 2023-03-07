@@ -1,0 +1,17 @@
+include ./avatar
+
+mixin chat(title, message, messageTime, countMessage, isYou)
+  li.sidebar-item
+    .sidebar-item__avatar
+      + avatar()
+      if countMessage > 0
+        .sidebar-item__badge=countMessage
+    .sidebar-item__info
+      span.sidebar-item__title=title
+      if isYou
+        span.sidebar-item__message
+          span Вы:
+          =message
+      else
+        span.sidebar-item__message=message
+    span.sidebar-item__time=messageTime

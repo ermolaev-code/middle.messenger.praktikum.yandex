@@ -1,0 +1,27 @@
+extends ../../templates/main
+include ../../components/input
+include ../../components/button
+include ../../components/button-submit
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Регистрация
+
+block main 
+  .wrapper__centered
+    .login-container
+      .login-container__header
+        h1 Регистрация
+      .login-container__body
+        form.login-form
+          .login-form__body
+            + input('email', 'text', 'Почта')
+            + input('login', 'text', 'Логин')
+            + input('first_name', 'text', 'Имя')
+            + input('second_name', 'text', 'Фамилия')
+            + input('phone', 'text', 'Телефон')
+            + input('password', 'password', 'Пароль')
+            + input('password_r', 'password', 'Пароль (еще раз)', '123456789', 'Пароли не совпадают')
+          + buttonSubmit('Зарегистрироваться')
+        + button('Войти', 'ghost', './signin.pug')

@@ -1,0 +1,10 @@
+mixin button(text, type, link)
+  if type === "primary"
+    button.button.button--primary=text
+  else if type === "ghost"
+    button.button.button--ghost
+      a(href=link)=text
+  else if type === "danger"
+    button.button.button--danger=text
+  else
+    button.button.button--default=text

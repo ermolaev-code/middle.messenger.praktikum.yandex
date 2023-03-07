@@ -1,0 +1,257 @@
+@import 'consts';
+@import 'fonts';
+@import 'reset';
+@import 'mixins';
+
+// MAIN TEMPLATE STYLES
+
+.wrapper {
+  min-height: 100%;
+  background-color: $mainBg;
+
+  &__main {
+    @include flexcolumn(0px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__centered {
+    @include flexcenter();
+    flex: 1;
+    min-width: $minWidth;
+  }
+}
+
+// COMPONENT STYLES
+
+.button {
+  height: 37px;
+  color: $mainFontColor;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &--small {
+    height: 21px;
+    font-size: 12px;
+  }
+
+  &--primary {
+    background-color: $primary;
+
+    &:hover {
+      background-color: $primaryHover;
+    }
+  }
+
+  &--ghost {
+    background: none;
+
+    a {
+      color: $ghost;
+
+      &:hover {
+        color: $ghostHover;
+      }
+    }
+  }
+
+  &--danger {
+    background-color: $danger;
+  }
+
+  &--default {
+    background: none;
+    border: 2px solid #2b2834;
+
+    &:hover {
+      background-color: $defaultHover;
+    }
+  }
+}
+
+.input {
+  position: relative;
+  height: 37px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: $secondaryFontColor;
+    font-size: 14px;
+    background: none;
+    border: 2px solid #2b2834;
+    border-radius: 6px;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  input:focus {
+    border-color: rgb(108 49 255 / 20%);
+  }
+
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    top: -5px;
+    left: 12px;
+    font-size: 12px;
+    padding-inline: 5px;
+  }
+
+  label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: $secondaryFontColor;
+    transition: 0.2s ease all;
+  }
+
+  &--error {
+    input {
+      color: #a70000;
+      border-color: rgb(167 0 0 / 50%) !important;
+    }
+
+    label {
+      color: #a70000 !important;
+    }
+
+    span {
+      position: absolute;
+      color: #a70000;
+      font-size: 12px;
+      left: 12px;
+      bottom: -5px;
+      padding-inline: 5px;
+    }
+  }
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #2e5d8e;
+  border-radius: 100%;
+
+  &__changer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(124 124 124 / 80%);
+    border-radius: 100%;
+  }
+
+  &--large {
+    width: 100px;
+    height: 100px;
+  }
+
+  &--changer {
+    cursor: pointer;
+
+    &:hover {
+      .avatar__changer {
+        @include flexcenter();
+      }
+    }
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  gap: 12px;
+  @include fullpadding(8px, 12px);
+
+  &__avatar {
+    position: relative;
+  }
+
+  &__badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 21px;
+    height: 21px;
+    padding-top: 4px;
+    padding-left: 6px;
+    font-weight: 500;
+    background-color: $primary;
+    border-radius: 100%;
+  }
+
+  &__info {
+    @include flexcolumn(4px);
+    flex: auto;
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__message {
+    color: $secondaryFontColor;
+    font-size: 12px;
+
+    span {
+      color: $mainFontColor;
+      font-weight: 500;
+    }
+  }
+
+  &__time {
+    color: $secondaryFontColor;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: $secondaryBg;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+
+  p:first-child {
+    font-weight: 500;
+  }
+}
+
+// ICONS
+
+.icon {
+  width: 37px;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &--attach {
+    background-image: url('../assets/icons/attach.svg');
+  }
+
+  &--send {
+    background-image: url('../assets/icons/send.svg');
+  }
+
+  &--search {
+    background-image: url('../assets/icons/search.svg');
+  }
+
+  &--add {
+    background-image: url('../assets/icons/add.svg');
+  }
+
+  &--user {
+    background-image: url('../assets/icons/user.svg');
+  }
+}

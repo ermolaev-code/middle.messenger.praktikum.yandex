@@ -1,0 +1,8 @@
+include ./avatar
+
+mixin user(display_name, email)
+  .sidebar-item.sidebar-item-no-hover
+    + avatar()
+    .sidebar-item__info
+      span.sidebar-item__title=display_name
+      span.sidebar-item__message=email

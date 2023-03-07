@@ -1,0 +1,22 @@
+extends ../../templates/main
+include ../../components/input
+include ../../components/button
+include ../../components/button-submit
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Войти
+
+block main 
+  .wrapper__centered
+    .login-container
+      .login-container__header
+        h1 Вход
+      .login-container__body
+        form.login-form
+          .login-form__body
+            + input('login', 'text', 'Логин')
+            + input('password', 'password', 'Пароль')
+          + buttonSubmit('Войти')
+        + button('Нет аккаунта?', 'ghost', './signup.pug')

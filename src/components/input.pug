@@ -1,0 +1,10 @@
+mixin input(name, type, placeHolder, value, error)
+  if error
+    .input.input--error
+      input(id=name name=name type=type autocomplete="off" placeholder="_" value=value)
+      label(for=name)=placeHolder
+      span=error
+  else
+    .input
+      input(id=name name=name type=type autocomplete="off" placeholder="_" value=value)
+      label(for=name)=placeHolder

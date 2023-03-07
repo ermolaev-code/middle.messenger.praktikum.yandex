@@ -1,0 +1,16 @@
+extends ../../templates/main
+include ../../components/error
+include ../../components/button
+
+block head
+  link(rel="stylesheet", href="../../styles/main.scss")
+  link(rel="stylesheet", href="./style.scss")
+  title Упс, не туда
+
+block main
+  .wrapper__centered
+    .error-container
+      .error-container__body 
+        + error('404', 'Не туда попали')
+      .error-container__footer
+        + button('Назад к чатам', 'ghost', '../index.pug')

@@ -1,0 +1,62 @@
+@import '../../styles/consts';
+@import '../../styles/mixins';
+
+.messager-container {
+  display: flex;
+  flex: 1;
+  min-width: $minWidth;
+}
+
+.sidebar-container {
+  @include flexcolumn(12px);
+  @include fullpadding(12px, 12px);
+  position: relative;
+  width: 310px;
+
+  &__add-chat {
+    position: absolute;
+    bottom: 9px;
+    right: 12px;
+  }
+}
+
+.message-feed-container {
+  @include flexcolumn(0px);
+  @include fullpadding(12px, 12px);
+  flex: 1;
+  background-color: $secondaryBg;
+
+  &__body {
+    @include flexcolumn(0px);
+    flex: 1;
+  }
+
+  &__empty {
+    @include flexcenter();
+    flex: 1;
+    color: $secondaryFontColor;
+  }
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+
+  .input {
+    flex: 1;
+  }
+
+  label {
+    background-color: $mainBg;
+  }
+}
+
+.message-form {
+  @extend .search-form;
+
+  label {
+    background-color: $secondaryBg;
+  }
+}
